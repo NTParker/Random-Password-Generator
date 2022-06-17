@@ -1,6 +1,7 @@
 var characterLength = 8;
 var choiceArr = [];
 
+// Character arrays
 var specialCharArr = [
   "@",
   "%",
@@ -89,7 +90,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Generate Password
 function generatePassword() {
-  return "Generated Password";
+  var password = "";
+  for (var i = 0; i < characterLength; i++) {
+    var randomIndex = Math.floor(Math.random() * choiceArr.length);
+    password = password + choiceArr[randomIndex];
+  }
+
+  return password;
 }
 
 // Prompt user for password criteria
@@ -124,12 +131,11 @@ function getPrompts() {
 // Write password to the #password input
 function writePassword() {
   var correctPrompts = getPrompts();
+  var passwordText = document.querySelector("#password");
 
   if (correctPrompts) {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
+    var newPassword = generatePassword();
+    passwordText.value = newPassword;
   }
 }
 
