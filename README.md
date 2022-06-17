@@ -1,5 +1,7 @@
 # Password Generator 
 
+https://ntparker.github.io/Random-Password-Generator/
+
 In this challenge I used javascript to create functionality for a password generator application. The javascript allows the user to randomly generate a password between 8 and 128 characters, with the option of using upper case letters, lower case letters, numbers, and/or special characters. 
 
 
